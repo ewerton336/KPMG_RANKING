@@ -15,11 +15,13 @@ namespace RankingAPIWeb.Controllers
     public class GameResultController : ControllerBase
     {
         private DaoGameResult daoGameResult;
-        private readonly IMemoryCache _memoryCache;
+        public IMemoryCache _memoryCache;
+
         public GameResultController(IMemoryCache memoryCache)
         {
             _memoryCache = memoryCache;
         }
+
 
 
 
@@ -66,7 +68,7 @@ namespace RankingAPIWeb.Controllers
                 list.Add(gameResult);
                 _memoryCache.Set("Resultados", list);
             }
-            CheckToSaveCachedData();
+            //CheckToSaveCachedData();
             return Ok();
         }
 
@@ -74,30 +76,42 @@ namespace RankingAPIWeb.Controllers
         [Route("cached")]
         public ActionResult GetCachedResults()
         {
-            return Ok(_memoryCache.Get("Resultados"));
+            var result = _memoryCache.Get("Resultados");
+            return Ok(result);
         }
 
-
-        private async Task CheckToSaveCachedData()
+        [HttpGet]
+        [Route("intervalRefresh")]
+        public ActionResult GetIntervalRefresh()
         {
-            _memoryCache.Set("IntervalTime", 1);
-            int interval = (int)_memoryCache.Get("IntervalTime");
-
-            var lastUpdate = _memoryCache.Get("LastUpdate");
-            var timeNow = DateTime.Now;
-            TimeSpan differenteTime = lastUpdate != null ? timeNow -(DateTime)lastUpdate   : timeNow - DateTime.MinValue ;
-            if (differenteTime.Minutes > interval)
-            {
-                var cachedList = (List<Model.GameResult>)_memoryCache.Get("Resultados");
-                if (cachedList != null && cachedList.Count > 0)
-                {
-                    foreach (var item in cachedList)
-                    {
-                        await daoGame.SaveAllGamesScore(item);
-                    }
-                    _memoryCache.Set("LastUpdate", DateTime.Now);
-                }
-            }
+            return Ok(_memoryCache.Get("intervalRefresh"));
         }
+
+        [HttpPost]
+        [Route("intervalRefresh")]
+        public ActionResult SetInvervalRefresh(int minutes)
+        {
+            _memoryCache.Set("intervalRefresh", minutes);
+            return Ok(minutes);
+        }
+
+
+       
+        
+
+        [HttpGet]
+        [Route("lastUpdated")]
+        public IActionResult GetLastUpdate()
+        {
+            return Ok(_memoryCache.Get("LastUpdate"));
+        }
+
+        [HttpPost]
+        [Route("lastUpdated")]
+        public IActionResult SetLastUpdate(DateTime LastUpdate)
+        {
+            return Ok(_memoryCache.Set("LastUpdate", LastUpdate));
+        }
+
     }
 }

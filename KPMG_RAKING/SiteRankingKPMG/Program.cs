@@ -22,5 +22,7 @@ namespace SiteRankingKPMG
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+       
     }
 }

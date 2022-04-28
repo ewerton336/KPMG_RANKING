@@ -13,7 +13,13 @@ namespace RankingAPIWeb
     {
         public static void Main(string[] args)
         {
+            Startup();
             CreateHostBuilder(args).Build().Run();
+        }
+
+        private static void Startup()
+        {
+            var autoTimer = new BLL.AutoSaveCached();
         }
 
 
