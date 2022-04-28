@@ -14,7 +14,7 @@ namespace RankingAPIWeb.DAO
         public DaoGameResult(MySqlConnection dbConnection) : base(dbConnection)
         {
         }
-        public async Task<IEnumerable<Model.GameResult>> GetTop100Players ()
+        public async Task<IEnumerable<Model.GameResult>> GetTop100Players()
         {
             try
             {
@@ -25,10 +25,37 @@ namespace RankingAPIWeb.DAO
                             from kpmg_ranking";
                 return await DbConnection.QueryAsync<Model.GameResult>(sql);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                throw;
+            }
+        }
 
-                throw ex;
+        public async Task SaveAllGamesScore(Model.GameResult gameResult)
+        {
+            try
+            {
+                //criado um foreach pois o método de inserção em massa facilita SQL injection
+                    var sql = @"INSERT INTO isangue_ewertondev.kpmg_ranking 
+                                (PLAYER_ID, 
+                                GAME_SCORE, 
+                                GAME_DATE) VALUES(
+                                @PLAYERID, 
+                                @GAMESCORE, 
+                                @GAMEDATE);";
+
+                    await DbConnection.ExecuteAsync(sql, new
+                    {
+                        PLAYERID = gameResult.PlayerId,
+                        GAMESCORE = gameResult.GameScore,
+                        GAMEDATE = gameResult.GameDate
+                    }
+                    );
+                
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 

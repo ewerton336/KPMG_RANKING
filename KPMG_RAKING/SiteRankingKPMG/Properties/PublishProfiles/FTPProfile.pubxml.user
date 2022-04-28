@@ -7,8 +7,8 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAihAw7w/hOEqwI7ygSYgJDgAAAAACAAAAAAAQZgAAAAEAACAAAAAqG/koPNPyyE3Xmz5uwzV7Eu7phMZt5i4FV7XR3nKaxwAAAAAOgAAAAAIAACAAAABYUzg/X8SbM8AyBlzyUq7K9CATy6xVNBxl6sZ0ONsTBCAAAACRrIIl/qwzutUCNpzpe5JHgBY3ZItOYEd3V9d0VSRPiUAAAABqfl2YU2UIQaNqNEtuOdaQXv+JSmyL0r3BFpyQwst19v7u6fJ+9G7HH5uW7s0XA9tYh9VANL+RP4QgxnjuhzE8</EncryptedPassword>
-    <_PublishTargetUrl>ftp://62.210.189.167/ewertondev.com.br</_PublishTargetUrl>
-    <History>True|2022-04-28T15:13:41.3204647Z;False|2022-04-28T11:23:17.8552162-03:00;True|2022-04-28T11:20:08.7016254-03:00;True|2022-04-28T10:57:47.7574363-03:00;</History>
+    <_PublishTargetUrl>ftp://62.210.189.167/httpdocs</_PublishTargetUrl>
+    <History>True|2022-04-28T16:50:03.7083855Z;False|2022-04-28T13:42:23.8054087-03:00;False|2022-04-28T13:40:29.7084854-03:00;True|2022-04-28T12:13:41.3204647-03:00;False|2022-04-28T11:23:17.8552162-03:00;True|2022-04-28T11:20:08.7016254-03:00;True|2022-04-28T10:57:47.7574363-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -17,8 +17,23 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="appsettings.json">
       <publishTime>04/27/2022 18:04:52</publishTime>
     </File>
+    <File Include="BouncyCastle.Crypto.dll">
+      <publishTime>03/18/2019 08:53:36</publishTime>
+    </File>
     <File Include="Dapper.dll">
       <publishTime>11/03/2021 11:07:40</publishTime>
+    </File>
+    <File Include="Google.Protobuf.dll">
+      <publishTime>01/28/2022 05:49:18</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.dll">
+      <publishTime>09/11/2020 22:11:58</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.Streams.dll">
+      <publishTime>09/11/2020 22:11:58</publishTime>
+    </File>
+    <File Include="K4os.Hash.xxHash.dll">
+      <publishTime>07/03/2019 17:39:02</publishTime>
     </File>
     <File Include="Microsoft.OpenApi.dll">
       <publishTime>08/29/2020 20:14:12</publishTime>
@@ -26,23 +41,26 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="Microsoft.Win32.SystemEvents.dll">
       <publishTime>10/22/2021 20:49:36</publishTime>
     </File>
+    <File Include="MySql.Data.dll">
+      <publishTime>03/30/2022 06:08:46</publishTime>
+    </File>
     <File Include="Oracle.ManagedDataAccess.dll">
       <publishTime>12/23/2021 03:49:00</publishTime>
     </File>
     <File Include="RankingAPIWeb.deps.json">
-      <publishTime>04/28/2022 10:42:59</publishTime>
+      <publishTime>04/28/2022 13:40:16</publishTime>
     </File>
     <File Include="RankingAPIWeb.dll">
-      <publishTime>04/28/2022 10:42:59</publishTime>
+      <publishTime>04/28/2022 13:40:16</publishTime>
     </File>
     <File Include="RankingAPIWeb.exe">
-      <publishTime>04/28/2022 10:42:59</publishTime>
+      <publishTime>04/28/2022 13:40:16</publishTime>
     </File>
     <File Include="RankingAPIWeb.pdb">
-      <publishTime>04/28/2022 10:42:59</publishTime>
+      <publishTime>04/28/2022 13:40:16</publishTime>
     </File>
     <File Include="RankingAPIWeb.runtimeconfig.json">
-      <publishTime>04/28/2022 10:42:59</publishTime>
+      <publishTime>04/28/2022 13:40:16</publishTime>
     </File>
     <File Include="runtimes/linux/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll">
       <publishTime>09/23/2021 14:45:18</publishTime>
@@ -78,25 +96,25 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>10/22/2021 20:52:04</publishTime>
     </File>
     <File Include="SiteRankingKPMG.deps.json">
-      <publishTime>04/28/2022 12:05:01</publishTime>
+      <publishTime>04/28/2022 13:43:17</publishTime>
     </File>
     <File Include="SiteRankingKPMG.dll">
-      <publishTime>04/28/2022 12:05:01</publishTime>
+      <publishTime>04/28/2022 13:43:23</publishTime>
     </File>
     <File Include="SiteRankingKPMG.exe">
-      <publishTime>04/28/2022 12:05:01</publishTime>
+      <publishTime>04/28/2022 13:43:23</publishTime>
     </File>
     <File Include="SiteRankingKPMG.pdb">
-      <publishTime>04/28/2022 12:05:01</publishTime>
+      <publishTime>04/28/2022 13:43:23</publishTime>
     </File>
     <File Include="SiteRankingKPMG.runtimeconfig.json">
-      <publishTime>04/28/2022 10:43:00</publishTime>
+      <publishTime>04/28/2022 13:40:17</publishTime>
     </File>
     <File Include="SiteRankingKPMG.Views.dll">
-      <publishTime>04/28/2022 12:05:01</publishTime>
+      <publishTime>04/28/2022 13:43:24</publishTime>
     </File>
     <File Include="SiteRankingKPMG.Views.pdb">
-      <publishTime>04/28/2022 12:05:01</publishTime>
+      <publishTime>04/28/2022 13:43:24</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.Swagger.dll">
       <publishTime>09/23/2020 12:47:20</publishTime>
@@ -134,8 +152,11 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="System.Windows.Extensions.dll">
       <publishTime>10/22/2021 20:50:26</publishTime>
     </File>
+    <File Include="Ubiety.Dns.Core.dll">
+      <publishTime>03/30/2022 06:07:38</publishTime>
+    </File>
     <File Include="web.config">
-      <publishTime>04/28/2022 12:05:08</publishTime>
+      <publishTime>04/28/2022 13:43:26</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>04/27/2022 18:04:52</publishTime>
@@ -244,6 +265,9 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     </File>
     <File Include="wwwroot/lib/jquery/LICENSE.txt">
       <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="ZstdNet.dll">
+      <publishTime>03/30/2022 06:07:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

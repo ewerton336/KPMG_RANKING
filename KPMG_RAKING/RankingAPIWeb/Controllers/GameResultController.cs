@@ -15,7 +15,6 @@ namespace RankingAPIWeb.Controllers
     public class GameResultController : ControllerBase
     {
         private DaoGameResult daoGameResult;
-        private BLL.ConstantSaveGameResult ConstantSaveGameResult = new BLL.ConstantSaveGameResult();
         private readonly IMemoryCache _memoryCache;
         public GameResultController(IMemoryCache memoryCache)
         {
@@ -62,11 +61,12 @@ namespace RankingAPIWeb.Controllers
                 _memoryCache.Set("Resultados", ResultList);
             }
             else
-                {
+            {
                 List<Model.GameResult> list = new List<Model.GameResult>();
-                    list.Add(gameResult);
+                list.Add(gameResult);
                 _memoryCache.Set("Resultados", list);
             }
+            CheckToSaveCachedData();
             return Ok();
         }
 
@@ -78,9 +78,26 @@ namespace RankingAPIWeb.Controllers
         }
 
 
+        private async Task CheckToSaveCachedData()
+        {
+            _memoryCache.Set("IntervalTime", 1);
+            int interval = (int)_memoryCache.Get("IntervalTime");
 
-
-
-
+            var lastUpdate = _memoryCache.Get("LastUpdate");
+            var timeNow = DateTime.Now;
+            TimeSpan differenteTime = lastUpdate != null ? timeNow -(DateTime)lastUpdate   : timeNow - DateTime.MinValue ;
+            if (differenteTime.Minutes > interval)
+            {
+                var cachedList = (List<Model.GameResult>)_memoryCache.Get("Resultados");
+                if (cachedList != null && cachedList.Count > 0)
+                {
+                    foreach (var item in cachedList)
+                    {
+                        await daoGame.SaveAllGamesScore(item);
+                    }
+                    _memoryCache.Set("LastUpdate", DateTime.Now);
+                }
+            }
+        }
     }
 }
