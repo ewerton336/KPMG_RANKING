@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,11 +14,11 @@ namespace RankingAPIWeb.DAO
         {
             ambiente = _ambiente;
         }
-        public static System.Data.IDbConnection DBConnectionOracle
+        public static MySqlConnection DBConnectionMySql
         {
             get
             {
-                return new Oracle.ManagedDataAccess.Client.OracleConnection(_ambiente);
+                return new MySqlConnection(_ambiente);
             }
         }
     }

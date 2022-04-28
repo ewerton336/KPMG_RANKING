@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAihAw7w/hOEqwI7ygSYgJDgAAAAACAAAAAAAQZgAAAAEAACAAAAAqG/koPNPyyE3Xmz5uwzV7Eu7phMZt5i4FV7XR3nKaxwAAAAAOgAAAAAIAACAAAABYUzg/X8SbM8AyBlzyUq7K9CATy6xVNBxl6sZ0ONsTBCAAAACRrIIl/qwzutUCNpzpe5JHgBY3ZItOYEd3V9d0VSRPiUAAAABqfl2YU2UIQaNqNEtuOdaQXv+JSmyL0r3BFpyQwst19v7u6fJ+9G7HH5uW7s0XA9tYh9VANL+RP4QgxnjuhzE8</EncryptedPassword>
+    <_PublishTargetUrl>ftp://62.210.189.167/ewertondev.com.br</_PublishTargetUrl>
+    <History>True|2022-04-28T15:13:41.3204647Z;False|2022-04-28T11:23:17.8552162-03:00;True|2022-04-28T11:20:08.7016254-03:00;True|2022-04-28T10:57:47.7574363-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="Dapper.dll">
+      <publishTime>11/03/2021 11:07:40</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 20:14:12</publishTime>
+    </File>
+    <File Include="Microsoft.Win32.SystemEvents.dll">
+      <publishTime>10/22/2021 20:49:36</publishTime>
+    </File>
+    <File Include="Oracle.ManagedDataAccess.dll">
+      <publishTime>12/23/2021 03:49:00</publishTime>
+    </File>
+    <File Include="RankingAPIWeb.deps.json">
+      <publishTime>04/28/2022 10:42:59</publishTime>
+    </File>
+    <File Include="RankingAPIWeb.dll">
+      <publishTime>04/28/2022 10:42:59</publishTime>
+    </File>
+    <File Include="RankingAPIWeb.exe">
+      <publishTime>04/28/2022 10:42:59</publishTime>
+    </File>
+    <File Include="RankingAPIWeb.pdb">
+      <publishTime>04/28/2022 10:42:59</publishTime>
+    </File>
+    <File Include="RankingAPIWeb.runtimeconfig.json">
+      <publishTime>04/28/2022 10:42:59</publishTime>
+    </File>
+    <File Include="runtimes/linux/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll">
+      <publishTime>09/23/2021 14:45:18</publishTime>
+    </File>
+    <File Include="runtimes/osx/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll">
+      <publishTime>09/23/2021 14:45:12</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll">
+      <publishTime>10/22/2021 20:51:56</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.dll">
+      <publishTime>10/19/2020 15:50:26</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll">
+      <publishTime>09/23/2021 14:45:06</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll">
+      <publishTime>10/22/2021 20:48:14</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/System.Diagnostics.PerformanceCounter.dll">
+      <publishTime>10/22/2021 20:52:08</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll">
+      <publishTime>10/22/2021 20:50:20</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/System.Windows.Extensions.dll">
+      <publishTime>10/22/2021 20:50:32</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.AccessControl.dll">
+      <publishTime>10/22/2021 20:45:48</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/22/2021 20:52:04</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.deps.json">
+      <publishTime>04/28/2022 12:05:01</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.dll">
+      <publishTime>04/28/2022 12:05:01</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.exe">
+      <publishTime>04/28/2022 12:05:01</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.pdb">
+      <publishTime>04/28/2022 12:05:01</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.runtimeconfig.json">
+      <publishTime>04/28/2022 10:43:00</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.Views.dll">
+      <publishTime>04/28/2022 12:05:01</publishTime>
+    </File>
+    <File Include="SiteRankingKPMG.Views.pdb">
+      <publishTime>04/28/2022 12:05:01</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>09/23/2020 12:47:20</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>09/23/2020 12:47:22</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>09/23/2020 12:47:24</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>10/22/2021 20:50:38</publishTime>
+    </File>
+    <File Include="System.Diagnostics.PerformanceCounter.dll">
+      <publishTime>10/22/2021 20:52:58</publishTime>
+    </File>
+    <File Include="System.DirectoryServices.dll">
+      <publishTime>10/19/2020 15:50:40</publishTime>
+    </File>
+    <File Include="System.DirectoryServices.Protocols.dll">
+      <publishTime>09/23/2021 14:45:22</publishTime>
+    </File>
+    <File Include="System.Drawing.Common.dll">
+      <publishTime>10/22/2021 20:50:24</publishTime>
+    </File>
+    <File Include="System.Security.AccessControl.dll">
+      <publishTime>10/22/2021 20:36:58</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/22/2021 20:50:14</publishTime>
+    </File>
+    <File Include="System.Security.Permissions.dll">
+      <publishTime>10/22/2021 20:50:30</publishTime>
+    </File>
+    <File Include="System.Windows.Extensions.dll">
+      <publishTime>10/22/2021 20:50:26</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>04/28/2022 12:05:08</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/LICENSE">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

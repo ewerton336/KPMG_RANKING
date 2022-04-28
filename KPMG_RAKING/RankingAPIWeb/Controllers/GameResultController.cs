@@ -4,102 +4,83 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RankingAPIWeb.DAO;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace RankingAPIWeb.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class GameResultController : Controller
+    [Route("api/GameResult")]
+    [Produces("application/json")]
+    public class GameResultController : ControllerBase
     {
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SaveGameScore(IFormCollection collection)
+        private DaoGameResult daoGameResult;
+        private BLL.ConstantSaveGameResult ConstantSaveGameResult = new BLL.ConstantSaveGameResult();
+        private readonly IMemoryCache _memoryCache;
+        public GameResultController(IMemoryCache memoryCache)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _memoryCache = memoryCache;
         }
 
 
 
+        //método para instanciar uma DAO somente uma vez, para assim não abrir várias conexões com o banco de dados
+        DaoGameResult daoGame
+        {
+            get
+            {
+                if (daoGameResult == null)
+                {
+                    daoGameResult = new DaoGameResult(Helper.DBConnectionMySql);
+                }
+                return daoGameResult;
+            }
+            set
+            {
+                daoGameResult = value;
+            }
+        }
+
+
+        [HttpGet]
         // GET: GameResultController
         public ActionResult Index()
         {
-            return View();
+            var teste2 = daoGame.GetTop100Players().Result;
+            return Ok(teste2);
         }
 
-        // GET: GameResultController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: GameResultController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: GameResultController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // POST: GameResultController
+        public ActionResult SaveDataGameScore(Model.GameResult gameResult)
         {
-            try
+            var ResultList = (List<Model.GameResult>)_memoryCache.Get("Resultados");
+            if (ResultList != null && ResultList.Count > 0)
             {
-                return RedirectToAction(nameof(Index));
+                ResultList.Add(gameResult);
+                _memoryCache.Set("Resultados", ResultList);
             }
-            catch
-            {
-                return View();
+            else
+                {
+                List<Model.GameResult> list = new List<Model.GameResult>();
+                    list.Add(gameResult);
+                _memoryCache.Set("Resultados", list);
             }
+            return Ok();
         }
 
-        // GET: GameResultController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        [Route("cached")]
+        public ActionResult GetCachedResults()
         {
-            return View();
+            return Ok(_memoryCache.Get("Resultados"));
         }
 
-        // POST: GameResultController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: GameResultController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: GameResultController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+
+
+
     }
 }

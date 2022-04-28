@@ -9,7 +9,7 @@ namespace RankingAPIWeb.Model
     {
         public int PlayerId { get; set; }
         public long GameId { get; set; }
-        public int WinScore { get; set; }
+        public int GameScore { get; set; }
         public DateTime GameDate { get; set; }
     }
 }
