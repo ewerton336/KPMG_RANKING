@@ -12,9 +12,20 @@ namespace RankingAPIWeb.BLL
     public class AutoSaveCached
     {
         const string cachedLink = "https://localhost:44351/api/GameResult/cached";
-        const string cacheLastUpdate = "https://localhost:44351/api/GameResult/lastUpdated";
+        const string ListCacheLastUpdate = "https://localhost:44351/api/GameResult/lastUpdated";
+        const string intervalRefreshLink = "https://localhost:44351/api/GameResult/intervalRefresh";
         HttpClient httpClient = new HttpClient();
         private DaoGameResult daoGameResult;
+
+        int intervalRefresh
+        {
+            get
+            {
+                //se não for definido um intervalo, por padrão será atualizado a cada 1 minuto
+                var interval = GetInvervalRefresh();
+                 return interval.Result * 1000 * 60;
+            }
+        }
 
         DaoGameResult daoGame
         {
@@ -34,60 +45,127 @@ namespace RankingAPIWeb.BLL
 
         public AutoSaveCached()
         {
-            _ = Timer();
+            Timer();
         }
 
         private async Task Timer()
         {
             while (true)
             {
-                _ = SaveCachedAsync();
-                await Task.Delay(5000);
+                await SaveCachedAsync();
+                await Task.Delay(intervalRefresh);
             }
         }
 
 
-        private async Task SaveCachedAsync()
+        public async Task SaveCachedAsync()
         {
-            var lastUpdated = await GetLastUpdated();
-            var timeNow = DateTime.Now;
-            TimeSpan differenteTime = timeNow - lastUpdated;
-            if (differenteTime.Minutes > 5)
+            try
             {
-                var cachedList = await GetCachedData();
-                if (cachedList != null && cachedList.Count > 0)
+                var lastUpdated = await GetLastUpdated();
+                var intervalRefresh = await GetInvervalRefresh();
+                var timeNow = DateTime.Now;
+                TimeSpan differenteTime = timeNow - lastUpdated;
+                if (differenteTime.Minutes > intervalRefresh)
                 {
-                    foreach (var item in cachedList)
+                    var cachedList = await GetCachedData();
+                    if (cachedList != null && cachedList.Count > 0)
                     {
-                        await daoGame.SaveAllGamesScore(item);
+                        foreach (var item in cachedList)
+                        {
+                            await daoGame.SaveAllGamesScore(item);
+                        }
+                        _ =  ClearCachedData();
+                        await SetLastUpdated(DateTime.Now);
                     }
-                    await SetLastUpdated(DateTime.Now);
                 }
             }
-
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private async Task<List<Model.GameResult>> GetCachedData()
         {
-            var response = await httpClient.GetAsync(cachedLink);
-            var responseData = await response.Content.ReadAsStringAsync();
-            var ListOfCachedData = JsonConvert.DeserializeObject<List<Model.GameResult>>(responseData);
-            return ListOfCachedData;
+            try
+            {
+                var response = await httpClient.GetAsync(cachedLink);
+                var responseData = await response.Content.ReadAsStringAsync();
+                var ListOfCachedData = JsonConvert.DeserializeObject<List<Model.GameResult>>(responseData);
+                return ListOfCachedData;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private async Task<DateTime> GetLastUpdated()
         {
-            var response = await httpClient.GetAsync(cacheLastUpdate);
-            var responseData = await response.Content.ReadAsStringAsync();
-            var LastUpdated = JsonConvert.DeserializeObject<DateTime>(responseData);
-            return LastUpdated;
+            try
+            {
+                var response = await httpClient.GetAsync(ListCacheLastUpdate);
+                var responseData = await response.Content.ReadAsStringAsync();
+                if (responseData == "") return DateTime.MinValue;
+                else
+                {
+                    var LastUpdated = JsonConvert.DeserializeObject<DateTime>(responseData);
+                    return LastUpdated;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private async Task SetLastUpdated(DateTime lastUpdated)
         {
-            var json = JsonConvert.SerializeObject(DateTime.Now, Formatting.Indented);
-            var stringContent = new StringContent(json);
-            await httpClient.PostAsync(cacheLastUpdate, stringContent);
+            try
+            {
+                var json = JsonConvert.SerializeObject(lastUpdated, Formatting.Indented);
+                var stringContent = new StringContent(json);
+                await httpClient.PostAsync(ListCacheLastUpdate, stringContent);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private async Task<int> GetInvervalRefresh()
+        {
+            try
+            {
+                var response = await httpClient.GetAsync(intervalRefreshLink);
+                var responseData = await response.Content.ReadAsStringAsync();
+                if (responseData == "") return 1;
+                else
+                {
+                    var LastUpdated = JsonConvert.DeserializeObject<int>(responseData);
+                    return LastUpdated;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private async Task ClearCachedData()
+        {
+            try
+            {
+                bool value = true;
+                var json = JsonConvert.SerializeObject(value, Formatting.Indented);
+                var stringContent = new StringContent(json);
+                await httpClient.PostAsync(cachedLink, stringContent);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

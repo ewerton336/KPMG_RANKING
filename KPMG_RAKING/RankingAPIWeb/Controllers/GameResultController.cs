@@ -80,6 +80,14 @@ namespace RankingAPIWeb.Controllers
             return Ok(result);
         }
 
+        [HttpPost]
+        [Route("cached")]
+        public ActionResult ClearCachedData()
+        {
+            _memoryCache.Remove("Resultados");
+            return Ok();
+        }
+
         [HttpGet]
         [Route("intervalRefresh")]
         public ActionResult GetIntervalRefresh()
@@ -94,10 +102,6 @@ namespace RankingAPIWeb.Controllers
             _memoryCache.Set("intervalRefresh", minutes);
             return Ok(minutes);
         }
-
-
-       
-        
 
         [HttpGet]
         [Route("lastUpdated")]

@@ -11,15 +11,16 @@ namespace RankingAPIWeb
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
-            Startup();
+            Task.Run(Startup);
             CreateHostBuilder(args).Build().Run();
         }
 
         private static void Startup()
         {
-            var autoTimer = new BLL.AutoSaveCached();
+            new BLL.AutoSaveCached();
         }
 
 
