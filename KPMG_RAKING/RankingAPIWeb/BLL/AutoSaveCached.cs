@@ -21,7 +21,7 @@ namespace RankingAPIWeb.BLL
         {
             get
             {
-                //se não for definido um intervalo, por padrão será atualizado a cada 1 minuto
+                //se não for definido um intervalo para as atualizações, por padrão será atualizado a cada 1 minuto
                 var interval = GetInvervalRefresh();
                  return interval.Result * 1000 * 60;
             }
@@ -140,12 +140,8 @@ namespace RankingAPIWeb.BLL
             {
                 var response = await httpClient.GetAsync(intervalRefreshLink);
                 var responseData = await response.Content.ReadAsStringAsync();
-                if (responseData == "") return 1;
-                else
-                {
-                    var LastUpdated = JsonConvert.DeserializeObject<int>(responseData);
-                    return LastUpdated;
-                }
+                    var interval = JsonConvert.DeserializeObject<int>(responseData);
+                    return interval;
             }
             catch (Exception)
             {
