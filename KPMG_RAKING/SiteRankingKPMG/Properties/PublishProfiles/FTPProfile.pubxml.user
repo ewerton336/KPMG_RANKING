@@ -7,8 +7,8 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAihAw7w/hOEqwI7ygSYgJDgAAAAACAAAAAAAQZgAAAAEAACAAAACihdXfoN0y+6FWKZMaYMuKmSTIeFJO30HUIPpkWqkg7gAAAAAOgAAAAAIAACAAAAA3TQY4mwMcbsP2RQSPZbMFUXfdq1qXzcJhTW2/icdBYSAAAAA+YxvcjTxUpdhgXgP3FVDwWWg+T4jH3epDWYvNgiL1CkAAAADIbZ5fNg8Um/vuUB7V8viBrIPtBkA7t7viKb77imgbj4IKeyBuISPGNR6twKhxopjUXSdWI1N0DhoDBnpTgiWT</EncryptedPassword>
-    <_PublishTargetUrl>ftp://62.210.189.167/ewertondev</_PublishTargetUrl>
-    <History>True|2022-04-28T18:44:56.1433148Z;False|2022-04-28T15:36:05.9707386-03:00;True|2022-04-28T13:50:03.7083855-03:00;False|2022-04-28T13:42:23.8054087-03:00;False|2022-04-28T13:40:29.7084854-03:00;True|2022-04-28T12:13:41.3204647-03:00;False|2022-04-28T11:23:17.8552162-03:00;True|2022-04-28T11:20:08.7016254-03:00;True|2022-04-28T10:57:47.7574363-03:00;</History>
+    <_PublishTargetUrl>ftp://62.210.189.167</_PublishTargetUrl>
+    <History>True|2022-04-30T21:27:07.1102107Z;True|2022-04-30T09:50:56.4741803-03:00;True|2022-04-29T22:56:18.8295214-03:00;True|2022-04-29T21:48:55.9092582-03:00;True|2022-04-29T21:19:47.8691015-03:00;True|2022-04-29T18:53:31.3932303-03:00;True|2022-04-29T16:58:43.4370552-03:00;True|2022-04-29T15:17:19.9740118-03:00;False|2022-04-29T15:10:49.5411593-03:00;False|2022-04-29T15:09:28.1168546-03:00;False|2022-04-29T15:04:07.9179801-03:00;False|2022-04-29T15:02:53.9711158-03:00;True|2022-04-29T13:54:27.7908913-03:00;True|2022-04-28T15:44:56.1433148-03:00;False|2022-04-28T15:36:05.9707386-03:00;True|2022-04-28T13:50:03.7083855-03:00;False|2022-04-28T13:42:23.8054087-03:00;False|2022-04-28T13:40:29.7084854-03:00;True|2022-04-28T12:13:41.3204647-03:00;False|2022-04-28T11:23:17.8552162-03:00;True|2022-04-28T11:20:08.7016254-03:00;True|2022-04-28T10:57:47.7574363-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -20,11 +20,89 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="BouncyCastle.Crypto.dll">
       <publishTime>03/18/2019 08:53:36</publishTime>
     </File>
+    <File Include="cs/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:40</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
     <File Include="Dapper.dll">
       <publishTime>11/03/2021 11:07:40</publishTime>
     </File>
+    <File Include="de/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>02/08/2021 22:32:20</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
     <File Include="Google.Protobuf.dll">
       <publishTime>01/28/2022 05:49:18</publishTime>
+    </File>
+    <File Include="Humanizer.dll">
+      <publishTime>05/04/2017 20:33:58</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
     </File>
     <File Include="K4os.Compression.LZ4.dll">
       <publishTime>09/11/2020 22:11:58</publishTime>
@@ -35,8 +113,62 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="K4os.Hash.xxHash.dll">
       <publishTime>07/03/2019 17:39:02</publishTime>
     </File>
+    <File Include="ko/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Razor.Language.dll">
+      <publishTime>10/26/2020 19:58:46</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>04/14/2020 19:39:12</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>11/11/2020 21:15:12</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.dll">
+      <publishTime>11/11/2020 21:14:40</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Razor.dll">
+      <publishTime>10/26/2020 19:59:10</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>11/11/2020 21:16:26</publishTime>
+    </File>
     <File Include="Microsoft.OpenApi.dll">
       <publishTime>08/29/2020 20:14:12</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>02/08/2021 22:32:08</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>02/08/2021 22:32:16</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>02/08/2021 22:32:18</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>02/08/2021 22:32:18</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>02/08/2021 22:32:14</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>02/08/2021 22:32:12</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>02/08/2021 22:32:18</publishTime>
     </File>
     <File Include="Microsoft.Win32.SystemEvents.dll">
       <publishTime>10/22/2021 20:49:36</publishTime>
@@ -50,20 +182,56 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="Oracle.ManagedDataAccess.dll">
       <publishTime>12/23/2021 03:49:00</publishTime>
     </File>
+    <File Include="pl/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
     <File Include="RankingAPIWeb.deps.json">
-      <publishTime>04/28/2022 17:55:16</publishTime>
+      <publishTime>04/29/2022 13:46:24</publishTime>
     </File>
     <File Include="RankingAPIWeb.dll">
-      <publishTime>04/29/2022 12:10:32</publishTime>
+      <publishTime>04/30/2022 18:13:26</publishTime>
     </File>
     <File Include="RankingAPIWeb.exe">
-      <publishTime>04/29/2022 12:10:32</publishTime>
+      <publishTime>04/30/2022 18:13:26</publishTime>
     </File>
     <File Include="RankingAPIWeb.pdb">
-      <publishTime>04/29/2022 12:10:32</publishTime>
+      <publishTime>04/30/2022 18:13:26</publishTime>
     </File>
     <File Include="RankingAPIWeb.runtimeconfig.json">
-      <publishTime>04/28/2022 17:55:16</publishTime>
+      <publishTime>04/29/2022 13:46:24</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
     </File>
     <File Include="runtimes/linux/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll">
       <publishTime>09/23/2021 14:45:18</publishTime>
@@ -73,6 +241,12 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     </File>
     <File Include="runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll">
       <publishTime>10/22/2021 20:51:56</publishTime>
+    </File>
+    <File Include="runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe">
+      <publishTime>02/08/2021 22:32:20</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe">
+      <publishTime>02/08/2021 22:32:20</publishTime>
     </File>
     <File Include="runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.dll">
       <publishTime>10/19/2020 15:50:26</publishTime>
@@ -99,25 +273,25 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>10/22/2021 20:52:04</publishTime>
     </File>
     <File Include="SiteRankingKPMG.deps.json">
-      <publishTime>04/29/2022 12:10:35</publishTime>
+      <publishTime>04/30/2022 18:13:36</publishTime>
     </File>
     <File Include="SiteRankingKPMG.dll">
-      <publishTime>04/29/2022 12:10:33</publishTime>
+      <publishTime>04/30/2022 18:13:35</publishTime>
     </File>
     <File Include="SiteRankingKPMG.exe">
-      <publishTime>04/29/2022 12:10:33</publishTime>
+      <publishTime>04/30/2022 18:13:35</publishTime>
     </File>
     <File Include="SiteRankingKPMG.pdb">
-      <publishTime>04/29/2022 12:10:33</publishTime>
+      <publishTime>04/30/2022 18:13:35</publishTime>
     </File>
     <File Include="SiteRankingKPMG.runtimeconfig.json">
-      <publishTime>04/29/2022 12:10:35</publishTime>
+      <publishTime>04/29/2022 22:44:13</publishTime>
     </File>
     <File Include="SiteRankingKPMG.Views.dll">
-      <publishTime>04/29/2022 12:10:42</publishTime>
+      <publishTime>04/30/2022 18:13:35</publishTime>
     </File>
     <File Include="SiteRankingKPMG.Views.pdb">
-      <publishTime>04/29/2022 12:10:42</publishTime>
+      <publishTime>04/30/2022 18:13:35</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.Swagger.dll">
       <publishTime>09/23/2020 12:47:20</publishTime>
@@ -127,6 +301,21 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     </File>
     <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
       <publishTime>09/23/2020 12:47:24</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>11/05/2016 02:55:42</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>11/05/2016 02:55:42</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>11/05/2016 02:55:42</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>11/05/2016 02:55:44</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>11/05/2016 02:55:46</publishTime>
     </File>
     <File Include="System.Configuration.ConfigurationManager.dll">
       <publishTime>10/22/2021 20:50:38</publishTime>
@@ -155,11 +344,23 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="System.Windows.Extensions.dll">
       <publishTime>10/22/2021 20:50:26</publishTime>
     </File>
+    <File Include="tr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
     <File Include="Ubiety.Dns.Core.dll">
       <publishTime>03/30/2022 06:07:38</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>04/29/2022 12:10:42</publishTime>
+      <publishTime>04/30/2022 18:13:37</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>04/27/2022 18:04:52</publishTime>
@@ -268,6 +469,30 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     </File>
     <File Include="wwwroot/lib/jquery/LICENSE.txt">
       <publishTime>04/27/2022 18:04:52</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>11/11/2020 21:15:14</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:20:06</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>11/11/2020 21:14:42</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>11/11/2020 21:16:28</publishTime>
     </File>
     <File Include="ZstdNet.dll">
       <publishTime>03/30/2022 06:07:38</publishTime>

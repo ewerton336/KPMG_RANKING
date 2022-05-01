@@ -18,11 +18,12 @@ namespace RankingAPIWeb.DAO
         {
             try
             {
-                var sql = @"SELECT GAME_ID GameId,
-                            PLAYER_ID PlayerId,
-                            GAME_SCORE GameScore,
-                            GAME_DATE GameDate
-                            from kpmg_ranking";
+                var sql = @" SELECT kr.PLAYER_ID PlayerId
+                             ,SUM(kr.GAME_SCORE) GameScore
+                          FROM kpmg_ranking kr 
+                          GROUP BY kr.PLAYER_ID
+                          ORDER BY 2 DESC
+                          LIMIT 100";
                 return await DbConnection.QueryAsync<Model.GameResult>(sql);
             }
             catch (Exception)

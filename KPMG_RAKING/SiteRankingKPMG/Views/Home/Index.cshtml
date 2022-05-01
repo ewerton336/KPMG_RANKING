@@ -1,8 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-}
+    ViewData["Title"] = "Ranking";
+    List<RankingAPIWeb.Model.GameResult> ranking = ViewBag.Ranking;
+    DateTime lastUpdate = ViewBag.LastUpdate;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+}
+<div class="container col-12 justify-content-center">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id do Jogador</th>
+                <th scope="col">Pontuação total</th>
+            </tr>
+        </thead>
+
+
+        @{
+        foreach (var position in ranking)
+        {
+            <tr>
+                <td>
+                    @position.PlayerId
+                </td>
+                <td>
+                    @position.GameScore
+                </td>
+            </tr>
+        }
+        }
+        <tbody>
+        </tbody>
+    </table>
+    
 </div>
+
+<p>Última atualização: @lastUpdate </p>

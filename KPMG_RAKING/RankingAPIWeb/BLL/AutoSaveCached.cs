@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RankingAPIWeb.DAO;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace RankingAPIWeb.BLL
 {
@@ -16,14 +18,17 @@ namespace RankingAPIWeb.BLL
         const string intervalRefreshLink = "https://localhost:44351/api/GameResult/intervalRefresh";
         HttpClient httpClient = new HttpClient();
         private DaoGameResult daoGameResult;
+        private Controllers.GameResultController gameResultController = new Controllers.GameResultController();
+
 
         int intervalRefresh
         {
             get
             {
                 //se não for definido um intervalo para as atualizações, por padrão será atualizado a cada 1 minuto
-                var interval = GetInvervalRefresh();
-                 return interval.Result * 1000 * 60;
+                var result = gameResultController.GetIntervalRefresh().Result as OkObjectResult;
+                var interval = (int)result.Value;
+                return interval;
             }
         }
 
@@ -53,7 +58,7 @@ namespace RankingAPIWeb.BLL
             while (true)
             {
                 await SaveCachedAsync();
-                await Task.Delay(intervalRefresh);
+                await Task.Delay(intervalRefresh * 1000 * 60);
             }
         }
 
@@ -62,8 +67,7 @@ namespace RankingAPIWeb.BLL
         {
             try
             {
-                var lastUpdated = await GetLastUpdated();
-                var intervalRefresh = await GetInvervalRefresh();
+                var lastUpdated = await GetLastUpdate();
                 var timeNow = DateTime.Now;
                 TimeSpan differenteTime = timeNow - lastUpdated;
                 if (differenteTime.Minutes > intervalRefresh)
@@ -75,8 +79,8 @@ namespace RankingAPIWeb.BLL
                         {
                             await daoGame.SaveAllGamesScore(item);
                         }
-                        _ =  ClearCachedData();
-                        await SetLastUpdated(DateTime.Now);
+                        gameResultController.ClearCachedData();
+                        gameResultController.SetLastUpdate(timeNow);
                     }
                 }
             }
@@ -90,10 +94,8 @@ namespace RankingAPIWeb.BLL
         {
             try
             {
-                var response = await httpClient.GetAsync(cachedLink);
-                var responseData = await response.Content.ReadAsStringAsync();
-                var ListOfCachedData = JsonConvert.DeserializeObject<List<Model.GameResult>>(responseData);
-                return ListOfCachedData;
+                var result = gameResultController.GetCachedResults().Result as OkObjectResult;
+                return (List<Model.GameResult>)result.Value;
             }
             catch (Exception)
             {
@@ -101,18 +103,12 @@ namespace RankingAPIWeb.BLL
             }
         }
 
-        private async Task<DateTime> GetLastUpdated()
+        private async Task<DateTime> GetLastUpdate()
         {
             try
             {
-                var response = await httpClient.GetAsync(ListCacheLastUpdate);
-                var responseData = await response.Content.ReadAsStringAsync();
-                if (responseData == "") return DateTime.MinValue;
-                else
-                {
-                    var LastUpdated = JsonConvert.DeserializeObject<DateTime>(responseData);
-                    return LastUpdated;
-                }
+                var result = gameResultController.GetLastUpdate().Result as OkObjectResult;
+                return (DateTime)result.Value;
             }
             catch (Exception)
             {
@@ -120,48 +116,7 @@ namespace RankingAPIWeb.BLL
             }
         }
 
-        private async Task SetLastUpdated(DateTime lastUpdated)
-        {
-            try
-            {
-                var json = JsonConvert.SerializeObject(lastUpdated, Formatting.Indented);
-                var stringContent = new StringContent(json);
-                await httpClient.PostAsync(ListCacheLastUpdate, stringContent);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
-        private async Task<int> GetInvervalRefresh()
-        {
-            try
-            {
-                var response = await httpClient.GetAsync(intervalRefreshLink);
-                var responseData = await response.Content.ReadAsStringAsync();
-                    var interval = JsonConvert.DeserializeObject<int>(responseData);
-                    return interval;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
-        private async Task ClearCachedData()
-        {
-            try
-            {
-                bool value = true;
-                var json = JsonConvert.SerializeObject(value, Formatting.Indented);
-                var stringContent = new StringContent(json);
-                await httpClient.PostAsync(cachedLink, stringContent);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

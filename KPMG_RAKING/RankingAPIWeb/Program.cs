@@ -5,16 +5,22 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RankingAPIWeb
 {
     public class Program
     {
-        
+
+
         public static void Main(string[] args)
         {
-            Task.Run(Startup);
+            Task t = Task.Run(Startup);
+            if (t.IsCompleted.Equals(true))
+            {
+                Task.Run(Startup);
+            }
             CreateHostBuilder(args).Build().Run();
         }
 

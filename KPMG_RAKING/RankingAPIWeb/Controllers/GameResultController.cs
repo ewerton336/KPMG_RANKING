@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RankingAPIWeb.DAO;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace RankingAPIWeb.Controllers
 {
@@ -15,20 +14,10 @@ namespace RankingAPIWeb.Controllers
     public class GameResultController : ControllerBase
     {
         private DaoGameResult daoGameResult;
-        public IMemoryCache _memoryCache;
-        private List<Model.GameResult> games = new List<Model.GameResult>();
 
-
-        public static List<Model.GameResult> Cats = new List<Model.GameResult>();
-   
-
-        public GameResultController(IMemoryCache memoryCache)
-        {
-            _memoryCache = memoryCache;
-        }
-
-
-
+        public static List<Model.GameResult> GameResults = new List<Model.GameResult>();
+        public static int IntervalRefresh = 1;
+        public static DateTime LastUpdate = DateTime.MinValue;
 
         //método para instanciar uma DAO somente uma vez, para assim não abrir várias conexões com o banco de dados
         DaoGameResult daoGame
@@ -95,22 +84,9 @@ namespace RankingAPIWeb.Controllers
         // POST: GameResultController
         public ActionResult SaveDataGameScore(Model.GameResult gameResult)
         {
-            Cats.Add(gameResult);
             try
             {
-                var ResultList = (List<Model.GameResult>)_memoryCache.Get("Resultados");
-                if (ResultList != null && ResultList.Count > 0)
-                {
-                    ResultList.Add(gameResult);
-                    _memoryCache.Set("Resultados", ResultList);
-                }
-                else
-                {
-                    List<Model.GameResult> list = new List<Model.GameResult>();
-                    list.Add(gameResult);
-                    _memoryCache.Set("Resultados", list);
-                }
-                //CheckToSaveCachedData();
+                GameResults.Add(gameResult);
                 return Ok();
             }
             catch (Exception ex)
@@ -131,13 +107,11 @@ namespace RankingAPIWeb.Controllers
         /// <response code="500">Ocorreu algo inesperado. Tente novamente mais tarde.</response>
         [HttpGet]
         [Route("cached")]
-        public ActionResult GetCachedResults()
+        public ActionResult<List<Model.GameResult>> GetCachedResults()
         {
-        
             try
             {
-                var result = _memoryCache.Get("Resultados");
-                return Ok(result);
+                return Ok(GameResults);
             }
             catch (Exception ex)
             {
@@ -161,7 +135,7 @@ namespace RankingAPIWeb.Controllers
         {
             try
             {
-                _memoryCache.Remove("Resultados");
+                GameResults.Clear();
                 return Ok();
             }
             catch (Exception ex)
@@ -177,9 +151,8 @@ namespace RankingAPIWeb.Controllers
         {
             try
             {
-                var interval = _memoryCache.Get("intervalRefresh");
-                if (interval == null) return Ok(1);
-                else return Ok(_memoryCache.Get("intervalRefresh"));
+                if (IntervalRefresh == 0) return Ok(1999);
+                else return Ok(IntervalRefresh);
             }
             catch (Exception ex)
             {
@@ -194,7 +167,7 @@ namespace RankingAPIWeb.Controllers
         {
             try
             {
-                _memoryCache.Set("intervalRefresh", minutes);
+                IntervalRefresh = minutes;
                 return Ok(minutes);
             }
             catch (Exception ex)
@@ -206,11 +179,11 @@ namespace RankingAPIWeb.Controllers
 
         [HttpGet]
         [Route("lastUpdated")]
-        public IActionResult GetLastUpdate()
+        public ActionResult<DateTime> GetLastUpdate()
         {
             try
             {
-                return Ok(_memoryCache.Get("LastUpdate"));
+                return Ok(LastUpdate);
             }
             catch (Exception ex)
             {
@@ -221,11 +194,12 @@ namespace RankingAPIWeb.Controllers
 
         [HttpPost]
         [Route("lastUpdated")]
-        public IActionResult SetLastUpdate(DateTime LastUpdate)
+        public ActionResult SetLastUpdate(DateTime lastDate)
         {
             try
             {
-                return Ok(_memoryCache.Set("LastUpdate", LastUpdate));
+                LastUpdate = lastDate;
+                return Ok(lastDate);
             }
             catch (Exception ex)
             {
